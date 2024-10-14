@@ -1,0 +1,18 @@
+# Build stage
+FROM rust:alpine as builder
+WORKDIR /usr/src/compressor
+
+COPY Cargo.toml Cargo.lock ./
+COPY src/ ./src/
+
+# Build the Rust program
+RUN apk add --no-cache musl-dev gcc
+RUN cargo build --release
+
+# Runtime stage
+FROM scratch
+COPY --from=builder /usr/src/compressor/target/release/compressor /compressor
+COPY large_file.txt /large_file.txt
+
+CMD ["/compressor"]
+

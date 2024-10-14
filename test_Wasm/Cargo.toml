@@ -1,0 +1,10 @@
+[package]
+name = "compressor"
+version = "0.1.0"
+authors = ["Your Name <your.email@example.com>"]
+edition = "2018"
+
+# Specify the dependencies for the project
+[dependencies]
+flate2 = "1.0"       # For compression (gzip)
+

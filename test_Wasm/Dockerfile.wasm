@@ -1,0 +1,5 @@
+FROM scratch
+COPY target/wasm32-wasi/release/compressor_opt.wasm /compressor.wasm
+COPY large_file.txt /large_file.txt
+ENTRYPOINT ["/compressor.wasm"]
+
