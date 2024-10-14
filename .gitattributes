@@ -1,2 +1,4 @@
 test_Wasm/large_file.txt filter=lfs diff=lfs merge=lfs -text
 test_native/large_file.txt filter=lfs diff=lfs merge=lfs -text
+*.txt filter=lfs diff=lfs merge=lfs -text
+
