@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Function to detect system architecture
 detect_architecture() {
     local arch=$(uname -m)
     case $arch in
@@ -17,12 +16,11 @@ detect_architecture() {
     esac
 }
 
-# Function to measure execution time using the 'time' command
 measure_execution_time() {
     image=$1
     runtime=$2
     platform=$3
-    container_name="test_container_$(date +%s%N)" # Unique container name based on timestamp
+    container_name="test_container_$(date +%s%N)"
     fresh_pull=$4
 
     # Print a clear separator
